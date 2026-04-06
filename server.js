@@ -11,6 +11,11 @@ app.get('/tasks',(req,res)=>{
     res.json(tasks);
 })
 
+app.post('/tasks', (req, res) => {
+    console.log('Received new task data:', req.body);
+    res.status(201).json({ message: 'Task creation pending' });
+});
+
 app.listen(PORT,()=>{
     console.log(`Server running on Port ${PORT}`);
 });
